@@ -70,7 +70,7 @@ class MarcasController extends Controller
     {
         try {
             // Se valida que todos los campos sean requeridos
-            $validacion = Marcas::make($request->all(), [
+            $validacion = Validator::make($request->all(), [
                 'nombre' => 'required'
             ]);
 
@@ -140,7 +140,7 @@ class MarcasController extends Controller
                     'marcas.id',
                     'marcas.nombre'
                 )
-                    ->where('categoria.id', '=', $id)
+                    ->where('marcas.id', '=', $id)
                     ->get();
                 return response()->json([
                     'code' => 200,

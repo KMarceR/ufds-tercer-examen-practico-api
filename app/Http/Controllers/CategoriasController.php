@@ -70,7 +70,7 @@ class CategoriasController extends Controller
     {
         try {
             // Se valida que todos los campos sean requeridos
-            $validacion = Categorias::make($request->all(), [
+            $validacion = Validator::make($request->all(), [
                 'nombre' => 'required'
             ]);
 
